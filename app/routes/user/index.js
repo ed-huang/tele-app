@@ -1,6 +1,7 @@
 import Ember from 'ember';
-console.log('user/index route');
-export default Ember.Route.extend({
 
-	
+export default Ember.Route.extend({
+	model: function() {
+		return this.store.find('post');
+	}
 });

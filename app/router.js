@@ -10,7 +10,7 @@ Router.map(function() {
 	  	this.route('confirmation');
 	  	this.route('reset');	
   	});
-	this.resource('user', {path: '/users/:name'}, function() {
+	this.resource('user', {path: '/users/:user_id'}, function() {
 		this.route('following');
   		this.route('followers');	
 	});

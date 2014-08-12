@@ -1,10 +1,4 @@
-<header class="users navbar">
-	<div class="col-lg-12 text-center nav-bar">
-		<a href="/"><img src="/assets/images/home-btn.png" class="home-btn"></a>
-		<img src="/assets/images/logo.png" class="logo">
-		<img src="/assets/images/user-profile.png" class="user-profile">
-	</div>
-</header>
+{{partial "header"}}
 <div class="container text-center">
 	<div class="user-info text-center">
 		<img src="/assets/images/profile-pic.png">
@@ -18,5 +12,6 @@
 			<li class="tele-link user-nav">{{#link-to "user.followers"}}Followers{{/link-to}}</li>
 			<li class="tele-link user-nav">{{#link-to "user.following"}}Following{{/link-to}}</li>
 		</ul>
-	{{outlet}}
+		{{outlet}}
+	</div>
 </div>
