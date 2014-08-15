@@ -251,3 +251,11 @@ span.login a {
   top: 50%;
   right: 0%;
 }
+
+.border-bottom {
+  border-bottom: 1px solid #ededed;
+}
+
+.posts-heading {
+  margin: 20px 0;
+}

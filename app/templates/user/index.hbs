@@ -1,9 +1,9 @@
 <ul>
-  {{#each post in controller}}
+  {{#each itemController="post"}}
   <li>
-    Name: {{post.author.name}}
-    <p>Post: {{post.text}}</p>
-    <p>{{post.timeStamp}} - <label {{action "delete" on="click"}}>delete</label></p>
+    Name: {{author.name}}
+    <p>Post: {{text}}</p>
+    <p>{{timeStamp}} - <label {{action "delete" on="click"}}>delete</label></p>
   </li>
   {{/each}}
 </ul>

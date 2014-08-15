@@ -1,0 +1,29 @@
+{{partial "header"}}
+<div class="container text-center dashboard">
+    
+    <!-- Text Area for Dashboard -->
+    <div class="row border-bottom">
+        <div class="col-md-12">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    {{textarea class="form-control" value=name cols="80" rows="6"}}
+                </div>
+                <div class="form-group">
+                    <span class="left">140 Characters</span>
+                    <button type="submit" class="btn btn-default right">Publish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row text-center border-bottom">
+        <h3 class="posts-heading">Latest Posts</h3>
+    </div>
+    {{#each}}
+    <div class="row">
+        {{name}}
+        <p>{{text}}</p>
+        {{timestamp}} - <a href="">Repost</a> - <a href="">Delete</a>
+    </div>
+    {{/each}}
+</div>
