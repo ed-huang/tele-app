@@ -1,7 +1,10 @@
-<form name="signupForm" class="content signup">
+<form {{action "signUp" on="submit"}}name="signupForm" class="content signup form-horizontal">
 	<h3>Create Account</h3>
-	<p class="input"><input placeholder="Enter your name ..."></p>
-	<p class="input"><input placeholder="Enter your username ..."></p>
-	<p class="input"><input type="password" placeholder="Enter your password ..."></p>
-	<p class="input"><input class="tele-btn left" type="submit" value="Sign Up" title="Log in"><span class="tele-link right">{{#link-to "create-account.login"}}Login{{/link-to}}</span></p>
+	<p class="input">{{input type="text" value=name placeholder="Enter your name ..."}}</p>
+	<p class="input">{{input type="text" value=username placeholder="Enter your username ..."}}</p>
+	<p class="input">{{input type="password" value=password placeholder="Enter your password ..."}}</p>
+	<p class="input">
+        <input {{bindAttr value="submit"}}class="tele-btn left" type="submit" value="Sign Up" title="Log in">
+        <span class="tele-link right">{{#link-to "create-account.login"}}Login{{/link-to}}</span>
+    </p>
 </form>

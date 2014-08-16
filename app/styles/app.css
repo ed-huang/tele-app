@@ -159,7 +159,7 @@ p.input {
   border-bottom:1px solid #EEEEEE;
   height: 25px;
   width: 100%;
-  padding: 5px 3px;
+  padding: 5px 5px;
 
 }
 
@@ -173,7 +173,11 @@ input.tele-btn, .tele-btn {
   width: initial;
   font-size: 13px;
   line-height: 25px;
+}
 
+.btn-grey {
+  border: 1px solid #666666;
+  color: #666666;
 }
 
 .tele-link {

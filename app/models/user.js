@@ -3,9 +3,8 @@ import DS from 'ember-data';
 var User = DS.Model.extend({
     name: DS.attr('string'),
     picture: DS.attr('string'),
-    posts: DS.hasMany('post', {async: true}),
-    followers: DS.hasMany('user'),
-    following: DS.hasMany('user')
+    posts: DS.hasMany('post'),
+    password: DS.attr('string') 
 });
 
 User.reopenClass({

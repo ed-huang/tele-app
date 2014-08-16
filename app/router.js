@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
     this.resource('create-account', {path: '/'}, function() {
-    this.route('login');
+      this.route('login');
       this.route('confirmation');
       this.route('reset');  
     });
