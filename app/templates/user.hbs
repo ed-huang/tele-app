@@ -1,17 +1,17 @@
 {{partial "header"}}
 <div class="container text-center">
-  <div class="user-info text-center">
-    <img src="/assets/images/profile-pic.png">
-    <h4 class="user-name">{{name}}</h3>
-    <p class="twitter-handle">@{{id}}</p>
-    <input type="button" class="tele-btn" value="Follow">
-  </div>
-  <div>
-    <ul class="list-inline">
-      <li class="tele-link user-nav">{{#link-to "user.index"}}Posts{{/link-to}}</li>
-      <li class="tele-link user-nav">{{#link-to "user.following"}}Following{{/link-to}}</li>
-      <li class="tele-link user-nav">{{#link-to "user.followers"}}Followers{{/link-to}}</li>
-    </ul>
-    {{outlet}}
-  </div>
+    <div class="user-info text-center">
+        <img src="/assets/images/profile-pic.png">
+        <h4 class="user-name">{{name}}</h3>
+        <p class="twitter-handle">@{{id}}</p>
+        <input type="button" class="tele-btn" value="Follow">
+    </div>
+    <div>
+        <ul class="list-inline">
+            <li class="tele-link user-nav">{{#link-to "user.index"}}Posts{{/link-to}}</li>
+            <li class="tele-link user-nav">{{#link-to "user.following"}}Following{{/link-to}}</li>
+            <li class="tele-link user-nav">{{#link-to "user.followers"}}Followers{{/link-to}}</li>
+        </ul>
+        {{outlet}}
+    </div>
 </div>

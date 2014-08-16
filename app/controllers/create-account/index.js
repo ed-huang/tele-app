@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
                     name: name,
                     password: password
                 }).save();
-                self.transitionToRoute('user');
+                self.transitionTo('/users/'+username);
             } else {
                 console.log('username already in database');
             }
