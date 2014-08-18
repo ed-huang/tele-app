@@ -1,4 +1,14 @@
-<h5>user/followers</h5>
-<ul>
-{{#each}}<li>{{name}}</li>{{/each}}
-</ul>
+<ol class="stream-items">
+{{#each}}
+    <li class="stream-item border-bottom">
+            <div class="tele-followers">
+                <div class="content">
+                    <div class="stream-item-header">
+                        <img class="avatar" src="https://pbs.twimg.com/profile_images/3745958419/9999d627e55bde3c66ebf1682c5ce47a_bigger.png">
+                        <strong class="fullname">{{author.name}}</strong>
+                    </div>
+                </div>
+            </div>
+        </li>
+{{/each}}
+</ol>

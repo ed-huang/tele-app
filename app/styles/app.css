@@ -320,6 +320,26 @@ span.login a {
   margin-left: 58px;
 }
 
+/**** Users Following Section ****/
+
 .tele-post {
   padding: 9px 12px;
+}
+
+.tele-following {
+  min-height: 80px;
+  padding: 20px 12px;
+}
+
+.tele-following .follow {
+  float: right;
+}
+
+.tele-followers {
+  min-height: 80px;
+  padding: 20px 12px;
+}
+
+.tele-followers .follow {
+  float: right;
 }
