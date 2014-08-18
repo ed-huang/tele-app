@@ -1,6 +1,6 @@
-<form name="signupForm" class="content signup">
+<form {{action "login" on="submit"}} name="signupForm" class="content signup">
 	<h3>Get Going...</h3>
-	<p class="input"><input placeholder="Enter Your Username ..."></p>
-	<p class="input"><input type="password" placeholder="Enter Your Password ..."></p>
-	<p class="input"><input class="tele-btn left" type="submit" value="Log in" title="Log in"><span class="tele-link right">{{#link-to "create-account.reset"}}Recover Password{{/link-to}} or {{#link-to "create-account.index"}}Sign Up{{/link-to}}</span></p>
+	<p class="input">{{input type="text" placeholder="Enter Your Username ..."}}</p>
+	<p class="input">{{input type="password" placeholder="Enter Your Password ..."}}</p>
+	<p class="input"><input {{bindAttr value="submit"}}class="tele-btn left" type="submit" value="Log in" title="Log in"><span class="tele-link right">{{#link-to "create-account.reset"}}Recover Password{{/link-to}} or {{#link-to "create-account.index"}}Sign Up{{/link-to}}</span></p>
 </form>
