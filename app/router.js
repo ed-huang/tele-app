@@ -15,8 +15,6 @@ Router.map(function() {
     this.route('followers');  
   });
   this.route('dashboard');
-  this.route('create-account/sign-in');
-  this.route('create-account/login');
 });
 
 export default Router;

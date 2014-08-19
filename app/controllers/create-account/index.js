@@ -12,10 +12,9 @@ export default Ember.Controller.extend({
             if(!store.hasRecordForId('user', username)) {
                 store.createRecord('user', {
                     id: username,
-                    name: name,
-                    password: password
+                    name: name
                 }).save();
-                self.transitionTo('/users/'+username);
+                self.transitionToRoute('dashboard', this.store.find('user', username));
             } else {
                 console.log('username already in database');
             }
