@@ -3,10 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
     needs: 'application',
-    id: Ember.computed.alias('controllers.application.id'),
-    name: Ember.computed.alias('controllers.application.name'),
-    picture: Ember.computed.alias('controllers.application.picture'),
-    isLoggedIn: Ember.computed.alias('controllers.application.isLoggedIn'),
+    authenticatedUser: Ember.computed.alias('controllers.application.authenticatedUser'),
     
 
     actions: {
@@ -17,16 +14,16 @@ export default Ember.Controller.extend({
             var store = this.store;
             var self = this;
 
-            if(!store.hasRecordForId('user', username)) {
+            if (!store.hasRecordForId('user', username)) {
                 
-                store.createRecord('user', {
+                var user = store.createRecord('user', {
                     id: username,
                     name: name
-                }).save();
-                
-                this.set('isLoggedIn', true);
-                this.set('id', username);
-                this.set('name', name);
+                });
+
+                this.set('authenticatedUser', user);
+                user.save();
+
 
                 self.transitionToRoute('dashboard');
 

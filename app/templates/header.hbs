@@ -1,10 +1,10 @@
 <header class="navbar text-center">
 	{{#link-to "dashboard"}}<img src="/assets/images/home-btn.png" class="home-btn">{{/link-to}}
 	{{#link-to "dashboard"}}<img src="/assets/images/logo.png" class="logo">{{/link-to}}
-	{{#link-to "user" id}}
+	{{#link-to "user" authenticatedUser.id}}
     <div class="user-links">
         <img src="/assets/images/profile-pic.png" height=20 class="user-profile">
-        <span class="name">{{name}}</span>
+        <span class="name">{{authenticatedUser.name}}</span>
     </div>
     {{/link-to}}
 </header>
