@@ -28,21 +28,23 @@ article.account {
   background: #008cb8;
 }
 
-header.users {
+/**** Header Nav Styles *****/
+
+header.navbar {
   box-shadow: 0px 0px 10px 2px #ededed;
-  padding: 8px 10px 0;
+  padding: 8px 20px 0;
 }
-
-.user-profile {
-  position: absolute;
-  right: 0;
-}
-
-
 
 .home-btn {
-  position: absolute;
-  left: 0;
+  float: left;
+}
+
+img.user-profile {
+  margin-right: 5px;
+}
+
+.user-links .name {
+  color: #8a8a8a;
 }
 
 .account.container {
@@ -257,6 +259,10 @@ span.login a {
 }
 
 /**** Styles for User Stream *****/
+
+.user-links {
+  float: right;
+}
 
 .content-main {
   width: 700px;

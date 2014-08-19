@@ -1,8 +1,2 @@
-<header>
-	<span class="test-nav">
-		{{#link-to "user"}}Users{{/link-to}}
-        {{#link-to "dashboard"}}Dashboard{{/link-to}}
-		{{#link-to "create-account"}}Create{{/link-to}}
-	</span>
-</header>
+{{#if isLoggedIn}}{{partial "header"}}{{/if}}
 {{outlet}}

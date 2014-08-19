@@ -4,11 +4,5 @@ export default Ember.Route.extend({
     model: function(params) {
         console.log('params: ', params);
         return this.store.find('user', params.user_id);
-    },
-    
-    serialize: function(model) {
-        return {
-            user_id: model.id
-        }
     }
 });

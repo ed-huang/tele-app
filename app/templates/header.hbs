@@ -1,7 +1,10 @@
-<header class="users navbar">
-	<div class="col-lg-12 text-center nav-bar">
-		{{#link-to "create-account"}}<img src="/assets/images/home-btn.png" class="home-btn">{{/link-to}}
-		<img src="/assets/images/logo.png" class="logo">
-		<img src="/assets/images/user-profile.png" class="user-profile">
-	</div>
+<header class="navbar text-center">
+	{{#link-to "dashboard"}}<img src="/assets/images/home-btn.png" class="home-btn">{{/link-to}}
+	{{#link-to "dashboard"}}<img src="/assets/images/logo.png" class="logo">{{/link-to}}
+	{{#link-to "user" id}}
+    <div class="user-links">
+        <img src="/assets/images/profile-pic.png" height=20 class="user-profile">
+        <span class="name">{{name}}</span>
+    </div>
+    {{/link-to}}
 </header>
