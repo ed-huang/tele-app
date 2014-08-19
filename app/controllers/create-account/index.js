@@ -14,7 +14,8 @@ export default Ember.Controller.extend({
             var store = this.store;
             var self = this;
 
-            if (!store.hasRecordForId('user', username)) {
+
+            if (username && name && password && !store.hasRecordForId('user', username)) {
                 
                 var user = store.createRecord('user', {
                     id: username,

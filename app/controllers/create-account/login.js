@@ -14,8 +14,8 @@ export default Ember.Controller.extend({
             var self = this;
 
 //Check to see if form name and password within the DB
-            if (store.hasRecordForId('user', username)) {
-                
+            if ( username && password && store.hasRecordForId('user', username)) {
+
                 var valid = store.find('user', username).then(function(user) {
                     return user.get('password') === password;
                 });
