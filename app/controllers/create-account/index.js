@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
                     id: username,
                     name: name
                 }).save();
-                self.transitionToRoute('dashboard', this.store.find('user', username));
+                self.transitionToRoute('user');
             } else {
                 console.log('username already in database');
             }
