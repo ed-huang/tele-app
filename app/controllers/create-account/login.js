@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
 //Set Dependencies for Login 
     needs: 'application',
     authenticatedUser: Ember.computed.alias('controllers.application.authenticatedUser'),
+    isLoggedIn: Ember.computed.alias('controllers.application.isLoggedIn'),
 
     actions: {
         login: function() {
@@ -22,6 +23,7 @@ export default Ember.Controller.extend({
 
                 if (valid) {
                     this.set('authenticatedUser', store.find('user', username));
+                    this.set('isLoggedIn', true);
                     self.transitionToRoute('dashboard');
                 }
 

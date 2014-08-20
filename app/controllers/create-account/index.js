@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
 
     needs: 'application',
     authenticatedUser: Ember.computed.alias('controllers.application.authenticatedUser'),
-    
+    isLoggedIn: Ember.computed.alias('controllers.application.isLoggedIn'),
 
     actions: {
         signUp: function() {
@@ -23,8 +23,9 @@ export default Ember.Controller.extend({
                 });
 
                 this.set('authenticatedUser', user);
-                user.save();
+                this.set('isLoggedIn', true);
 
+                user.save();
 
                 self.transitionToRoute('dashboard');
 

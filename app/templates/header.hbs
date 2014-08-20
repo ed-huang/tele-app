@@ -1,5 +1,5 @@
 <header class="navbar text-center">
-    {{#if authenticatedUser}}
+    {{#if isLoggedIn}}
     	{{#link-to "dashboard"}}<img src="/assets/images/home-btn.png" class="home-btn">{{/link-to}}
     	{{#link-to "dashboard"}}<img src="/assets/images/logo.png" class="logo">{{/link-to}}
     	{{#link-to "user" authenticatedUser.id}}
