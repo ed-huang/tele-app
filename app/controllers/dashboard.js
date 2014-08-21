@@ -6,4 +6,8 @@ export default Ember.ArrayController.extend({
     authenticatedUser: Ember.computed.alias('controllers.application.authenticatedUser'),
     isLoggedIn: Ember.computed.alias('controllers.application.isLoggedIn'),
 
+    actions: {
+        
+    }
+
 });

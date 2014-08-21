@@ -17,16 +17,14 @@ export default Ember.Controller.extend({
 //Check to see if form name and password within the DB
             if ( username && password && store.hasRecordForId('user', username)) {
 
-                var valid = store.find('user', username).then(function(user) {
-                    return user.get('password') === password;
+                store.find('user', username).then(function(user) {
+
+                        if (user.get('password') === password) {
+                            self.set('authenticatedUser', store.find('user', username));
+                            self.set('isLoggedIn', true);
+                            self.transitionToRoute('dashboard');
+                        }
                 });
-
-                if (valid) {
-                    this.set('authenticatedUser', store.find('user', username));
-                    this.set('isLoggedIn', true);
-                    self.transitionToRoute('dashboard');
-                }
-
             } else {
                 console.log('no username in database');
             }
