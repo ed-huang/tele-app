@@ -1,5 +1,7 @@
 # Tele-app
 
+Tele-App is a Twitter Clone built in EmberJs.
+
 This README outlines the details of collaborating on this Ember application.
 
 ## Installation
