@@ -265,6 +265,14 @@ span.login a {
 *** Styles for User Stream ****
 *******************************/
 
+.dashboard-form-control {
+  border: none;
+  resize: none;
+  box-shadow: none;
+  width: 100%;
+  font-size: 24px;
+}
+
 .user-links {
   float: right;
 }
@@ -319,6 +327,7 @@ span.login a {
 }
 
 .delete {
+  cursor: pointer;
   font-weight: 300;
 }
 

@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+
+
     actions: {
         signUp: function() {
             var username = this.get('username');
@@ -15,16 +17,12 @@ export default Ember.Controller.extend({
                 
                 var user = store.createRecord('user', {
                     id: username,
-                    name: name
+                    name: name,
+                    password: password
                 });
 
-                this.set('authenticatedUser', user);
-                this.set('isLoggedIn', true);
-
                 this.get('session').set('user', user);
-
                 user.save();
-
                 self.transitionToRoute('dashboard');
 
             } else {

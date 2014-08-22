@@ -11,7 +11,8 @@
             <p><span class="time">{{time}}</span> - <label class="tele-link delete" {{action "delete" on="click"}}>Delete</label></p>
         </div>
     </div>
-    
   </li>
+  {{else}}
+    <li class="empty-stream text-center"><h3>You have no posts... {{#link-to "dashboard"}}Want to add one?{{/link-to}}</h3></li>
   {{/each}}
 </ol>

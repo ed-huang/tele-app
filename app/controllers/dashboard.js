@@ -14,7 +14,9 @@ export default Ember.ArrayController.extend({
         return this.get('session.user.name');
     }.property(),
 
-    isLoggedIn: Ember.computed.alias('controllers.application.isLoggedIn'),
+    wordCount: function() {
+        console.log(this.get('post'));
+    }.property(),
 
     actions: {
         postTweet: function() {
@@ -24,8 +26,8 @@ export default Ember.ArrayController.extend({
                 author: this.get('authenticatedUser'), 
                 text: this.get('post'),
                 timestamp: moment()
-
             });
+
             post.save();
             this.set('post', '');
         }

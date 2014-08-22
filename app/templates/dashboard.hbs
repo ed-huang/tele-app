@@ -6,10 +6,10 @@
         <div class="col-md-12">
             <form class="form-horizontal" role="form" {{action "postTweet" on="submit"}}>
                 <div class="form-group">
-                    {{textarea class="form-control" placeholder="Enter Post Here..." value=post cols="80" rows="6"}}
+                    {{textarea class="dashboard-form-control" placeholder="Enter Post Here..." value=post rows="4"}}
                 </div>
                 <div class="form-group">
-                    <span class="left">140 Characters</span>
+                    <span class="left">140 Characters{{wordCount}}</span>
                     <button type="submit" class="btn btn-default right">Publish</button>
                 </div>
             </form>
