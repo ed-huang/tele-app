@@ -2,9 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-    needs: 'application',
-    authenticatedUser: Ember.computed.alias('controllers.application.authenticatedUser'),
-    isLoggedIn: Ember.computed.alias('controllers.application.isLoggedIn'),
+    // needs: 'application',
+    // authenticatedUser: Ember.computed.alias('controllers.application.authenticatedUser'),
+    // isLoggedIn: Ember.computed.alias('controllers.application.isLoggedIn'),
 
     actions: {
         signUp: function() {
@@ -24,6 +24,8 @@ export default Ember.Controller.extend({
 
                 this.set('authenticatedUser', user);
                 this.set('isLoggedIn', true);
+
+                this.get('session').set('user', user);
 
                 user.save();
 

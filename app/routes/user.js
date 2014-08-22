@@ -1,11 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-
-    actions: {
-        error: function(reason) {
-            console.log('reason: ', reason);
-            this.transitionTo('create-account');
-        }
+    model: function(params) {
+        // debugger;
+        var self = this;
+        // var u = this.store.find('user', params.user_id);
+        // console.log('u: ', u);
+        return this.store.find('user', params.user_id).then( null, function() {
+            self.transitionTo('create-account');
+        });
     }
 });
