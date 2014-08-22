@@ -1,10 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
+    sortProperties: ['id'],
+    sortAscending: false,
 
-    // needs: 'application',
-    // authenticatedUser: Ember.computed.alias('controllers.application.authenticatedUser'),
-    // isLoggedIn: Ember.computed.alias('controllers.application.isLoggedIn'),
+
 
     authenticatedUser: function() {
         return this.get('session.user');
@@ -17,6 +17,18 @@ export default Ember.ArrayController.extend({
     isLoggedIn: Ember.computed.alias('controllers.application.isLoggedIn'),
 
     actions: {
+        postTweet: function() {
+            
+            
+            var post = this.store.createRecord('post', {
+                author: this.get('authenticatedUser'), 
+                text: this.get('post'),
+                timestamp: moment()
+
+            });
+            post.save();
+            this.set('post', '');
+        }
         
     }
 

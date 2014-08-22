@@ -3,10 +3,8 @@ import Ember from 'ember';
 export default Ember.Route.extend({
     beforeModel: function() {
 
-        // var loggedIn = this.controllerFor('application').get('isLoggedIn');
-        var loggedIn = this.get('session.isAuthenticated');
-        this.get('session.isAuthenticated');
-        console.log(loggedIn, "loogin");
+        // var loggedIn = this.get('session.isAuthenticated');
+        var loggedIn = true;
         
         if (!loggedIn) {
             this.transitionTo('create-account');
@@ -14,8 +12,6 @@ export default Ember.Route.extend({
     },
 
     model: function() {
-        console.log('dashboard model');
-
         return this.store.find('post');
     }
 });
