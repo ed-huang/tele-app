@@ -264,6 +264,10 @@ span.login a {
 /******************************
 *** Styles for User Stream ****
 *******************************/
+.content-dashboard {
+  width: 700px;
+  margin: 0 auto;
+}
 
 .dashboard-form-control {
   border: none;
@@ -271,6 +275,10 @@ span.login a {
   box-shadow: none;
   width: 100%;
   font-size: 24px;
+}
+
+.empty-stream {
+  margin-top: 20px;
 }
 
 .user-links {
