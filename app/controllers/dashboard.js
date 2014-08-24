@@ -4,7 +4,12 @@ export default Ember.ArrayController.extend({
 
     sortProperties: ['id'],
     sortAscending: false,
-    wordCount: 140,
+    maxLength: 140,
+    post: '',
+
+    wordCount: function() {
+        return  this.get('maxLength') - this.get('post').length;
+    }.property('post', 'maxLength'),
 
     authenticatedUser: function() {
         return this.get('session.user');
@@ -15,6 +20,7 @@ export default Ember.ArrayController.extend({
     }.property(),
 
     actions: {
+        
         getCount: function(event) {
             var maxLength = 140;
             var textLength = this.get('post').length;
@@ -22,16 +28,18 @@ export default Ember.ArrayController.extend({
         },
 
         postTweet: function() {
-            
-            var post = this.store.createRecord('post', {
-                author: this.get('authenticatedUser'), 
-                text: this.get('post'),
-                timestamp: moment()
-            });
+            if (this.get('post') !== '') {
+                var post = this.store.createRecord('post', {
+                    author: this.get('authenticatedUser'), 
+                    text: this.get('post'),
+                    timestamp: moment()
+                });
 
-            post.save();
-            this.set('post', '');
-            this.set('wordCount', 140);
+                post.save();
+                this.set('post', '');
+                this.set('wordCount', 140);
+            }
+            
         }
     }
 });

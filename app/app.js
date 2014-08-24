@@ -11,7 +11,4 @@ var App = Ember.Application.extend({
 
 loadInitializers(App, 'tele-app');
 
-import PostTextArea from './views/post-textarea';
-Ember.Handlebars.helper('post-textarea', PostTextArea);
-
 export default App;

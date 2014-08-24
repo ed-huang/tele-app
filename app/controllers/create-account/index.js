@@ -2,16 +2,14 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-
-
     actions: {
         signUp: function() {
+
             var username = this.get('username');
             var name = this.get('name');
             var password = this.get('password');
             var store = this.store;
             var self = this;
-
 
             if (username && name && password && !store.hasRecordForId('user', username)) {
                 

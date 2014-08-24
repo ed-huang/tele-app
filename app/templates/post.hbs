@@ -1,0 +1,12 @@
+<li class="stream-item border-bottom">
+    <div class="tele-post">
+        <div class="content">
+            <div class="stream-item-header">
+                <img class="avatar" src="https://pbs.twimg.com/profile_images/3745958419/9999d627e55bde3c66ebf1682c5ce47a_bigger.png">
+                {{#link-to "user" author.id}}<strong class="fullname">{{author.name}}</strong>{{/link-to}}
+            </div>
+            <p class="tweet-text">{{text}}</p>
+            <p><span class="time">{{time}}</span>{{#if currentUser}} - <label class="tele-link delete" {{action "delete" on="click"}}>Delete</label>{{/if}}</p>
+        </div>
+    </div>
+</li>
