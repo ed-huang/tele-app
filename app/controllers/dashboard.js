@@ -12,21 +12,14 @@ export default Ember.ArrayController.extend({
         return  this.get('maxLength') - this.get('post').length;
     }.property('post', 'maxLength'),
 
-//Is this the best way to authenticate the user? It seems redundant that every page that has the Header.. need to check and see if it's authenticated
-
-    authenticatedUser: function() {
-        return this.get('session.user');
-    }.property(),
-
     actions: {
-
         postTweet: function() {
 
 //Check to see if Post is empty before allowing user to post tweet
 
             if (this.get('post') !== '') {
                 var post = this.store.createRecord('post', {
-                    author: this.get('authenticatedUser'), 
+                    author: this.get('session.user'), 
                     text: this.get('post'),
                     timestamp: moment()
                 });

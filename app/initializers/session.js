@@ -4,6 +4,7 @@ export default {
   initialize: function(container, app) {
 
     var Session = Ember.Object.extend({
+      
         user: null,
         isAuthenticated: function() {
             return this.get('user') != null;

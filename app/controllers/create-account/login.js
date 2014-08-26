@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
 
                         if (user.get('password') === password) {
 
-                            self.get('session').set('user', user);
+                            self.set('session.user', user);
                             self.transitionToRoute('dashboard');
                         }
                 });

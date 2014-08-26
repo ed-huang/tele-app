@@ -9,7 +9,6 @@ export default Ember.Controller.extend({
             var name = this.get('name');
             var password = this.get('password');
             var store = this.store;
-            var self = this;
 
 /*
 //TODO: Include popups with incorrect user name etc... 
@@ -23,9 +22,9 @@ export default Ember.Controller.extend({
                     password: password
                 });
 
-                this.get('session').set('user', user);
+                this.set('session.user', user);
                 user.save();
-                self.transitionToRoute('dashboard');
+                this.transitionToRoute('dashboard');
 
             } else {
                 console.log('username already in database');
