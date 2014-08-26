@@ -5,9 +5,6 @@ export default Ember.Route.extend({
 
         var loggedIn = this.get('session.isAuthenticated');
 
-//        FOR TESTING PURPORSE
-        // var loggedIn = true;
-        
         if (!loggedIn) {
             this.transitionTo('create-account');
         }

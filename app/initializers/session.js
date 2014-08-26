@@ -3,7 +3,6 @@ export default {
 
   initialize: function(container, app) {
 
-    // app.register('route', 'foo', 'service:foo');
     var Session = Ember.Object.extend({
         user: null,
         isAuthenticated: function() {

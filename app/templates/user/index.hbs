@@ -1,6 +1,6 @@
 <ol class="stream-items">
   {{#each itemController="post"}}
-    {{partial "post"}}
+    {{user-post text=text name=author.name user=author.id time=time isCurrentUser=isCurrentUser model=model}}
   {{else}}
     <li class="empty-stream text-center"><h3>You have no posts... {{#link-to "dashboard"}}Want to add one?{{/link-to}}</h3></li>
   {{/each}}

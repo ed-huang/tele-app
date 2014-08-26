@@ -11,6 +11,10 @@ export default Ember.Controller.extend({
             var store = this.store;
             var self = this;
 
+/*
+//TODO: Include popups with incorrect user name etc... 
+*/
+
             if (username && name && password && !store.hasRecordForId('user', username)) {
                 
                 var user = store.createRecord('user', {

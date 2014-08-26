@@ -5,7 +5,7 @@
     	{{#link-to "user" authenticatedUser.id}}
         <div class="user-links">
             <img src="/assets/images/profile-pic.png" height=20 class="user-profile">
-            <span class="name">{{authenticatedUserName}}</span>
+            <span class="name">{{authenticatedUser.name}}</span>
         </div>
         {{/link-to}}
     {{else}}

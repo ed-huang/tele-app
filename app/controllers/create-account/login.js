@@ -4,10 +4,14 @@ export default Ember.Controller.extend({
     
     actions: {
         login: function() {
+
             var username = this.get('username');
             var password = this.get('password');
             var store = this.store;
             var self = this;
+/*
+//TODO: Include popups with incorrect user name etc... 
+*/
 
 //Check to see if form name and password within the DB
             if (username && password && store.hasRecordForId('user', username)) {
