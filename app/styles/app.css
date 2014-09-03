@@ -298,6 +298,8 @@ span.login a {
   font-weight: 300;
   font-size: 18px;
   padding: 10px;
+  border: 0 solid;
+  transition: all .15s ease-in-out;
 }
 
 .stream-nav a.active {
@@ -307,6 +309,8 @@ span.login a {
 
 .stream-nav a:hover {
   color: #666666;
+  border-bottom: 3px solid #428bca;
+  
 }
 
 .user-nav a:hover {
