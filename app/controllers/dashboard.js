@@ -16,12 +16,12 @@ export default Ember.ArrayController.extend({
         postTweet: function() {
 
 //Check to see if Post is empty before allowing user to post tweet
-
+            var time = new Date();
             if (this.get('post') !== '') {
                 var post = this.store.createRecord('post', {
                     author: this.get('session.user'), 
                     text: this.get('post'),
-                    timestamp: moment()
+                    timestamp: time
                 });
 
                 post.save();

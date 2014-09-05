@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
 //TODO: Include popups with incorrect user name etc... 
 */
 
-            if (username && name && password && !store.hasRecordForId('user', username)) {
+            if (username && name && password) {
                 
                 var user = store.createRecord('user', {
                     id: username,
@@ -23,7 +23,7 @@ export default Ember.Controller.extend({
                 });
 
                 this.set('session.user', user);
-                user.save();
+                user.save(); //POST REQUEST TO SERVER
                 this.transitionToRoute('dashboard');
 
             } else {
