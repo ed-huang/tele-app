@@ -19,7 +19,6 @@ export default Ember.Controller.extend({
                 console.log('logging in: ');
                 store.find('user', { username: username, password: password, operation: 'login' } ).then(function(users) {
                     
-                    console.log('user: ', users);
                     self.set('session.user', users.get('firstObject'));
                     self.transitionToRoute('dashboard');
 
