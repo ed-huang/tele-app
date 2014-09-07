@@ -365,8 +365,33 @@ span.login a {
   padding: 20px 12px;
 }
 
+li:hover .tele-following .follow {
+  opacity: 1;
+}
+
+
+
 .tele-following .follow {
+  opacity: .5;
   float: right;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+li:first-child .tele-following .follow {
+  opacity: 1;
+}
+
+.tele-following .follow:hover {
+
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 .tele-followers {
