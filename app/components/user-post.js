@@ -22,6 +22,5 @@ export default Ember.Component.extend({
         this.$().hide('slow', function() {
             that.remove();
         });
-        console.log('element removed', this.$());
     }.on('willDestroyElement')
 });
