@@ -369,18 +369,11 @@ li:hover .tele-following .follow {
   opacity: 1;
 }
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> fixtureAdapter
 .tele-following .follow {
-  opacity: .5;
+
   float: right;
-<<<<<<< HEAD
-=======
   opacity: .3;
->>>>>>> fixtureAdapter
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
@@ -388,13 +381,6 @@ li:hover .tele-following .follow {
   transition: all 0.2s;
 }
 
-<<<<<<< HEAD
-li:first-child .tele-following .follow {
-  opacity: 1;
-}
-
-=======
->>>>>>> fixtureAdapter
 .tele-following .follow:hover {
 
   -webkit-transform: scale(1.3);
