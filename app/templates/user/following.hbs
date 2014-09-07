@@ -1,15 +1,15 @@
 <ol class="stream-items">
 {{#each}}
     <li class="stream-item border-bottom">
-    <div class="tele-following">
-        <div class="content">
-            <div class="stream-item-header">
-                <img class="avatar" src="https://pbs.twimg.com/profile_images/3745958419/9999d627e55bde3c66ebf1682c5ce47a_bigger.png">
-                <strong class="fullname">{{name}}</strong>
-                <input type="button" value="Follow" class="tele-btn follow">
+        <div class="tele-following">
+            <div class="content">
+                <div class="stream-item-header">
+                    <img class="avatar" src="https://pbs.twimg.com/profile_images/3745958419/9999d627e55bde3c66ebf1682c5ce47a_bigger.png">
+                    {{#link-to "user" id}}<strong class="fullname">{{name}}</strong>{{/link-to}}
+                    <input type="button" value="Follow" class="tele-btn follow">
+                </div>
             </div>
         </div>
-    </div>
-  </li>
+    </li>
 {{/each}}
 </ol>
