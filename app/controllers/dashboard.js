@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
 
-    sortProperties: ['id'],
+    sortProperties: ['timestamp'],
     sortAscending: false,
     maxLength: 140,
     post: '',
@@ -13,6 +13,8 @@ export default Ember.ArrayController.extend({
     }.property('post', 'maxLength'),
 
     actions: {
+        
+
         postTweet: function() {
 
 //Check to see if Post is empty before allowing user to post tweet
@@ -26,9 +28,7 @@ export default Ember.ArrayController.extend({
 
                 post.save();
                 this.set('post', '');
-
             }
-            
         }
     }
 });

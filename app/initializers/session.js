@@ -1,3 +1,6 @@
+/* global Ember */
+// No import for Ember, it's a global called `Ember`
+
 export default {
   name: 'session',
 

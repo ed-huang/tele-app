@@ -1,4 +1,6 @@
 import Ember from 'ember';
+/* global moment */
+// No import for moment, it's a global called `moment`
 
 export default Ember.ObjectController.extend({
 

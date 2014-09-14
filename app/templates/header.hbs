@@ -8,6 +8,7 @@
             <span class="name">{{session.user.name}}</span>
         </div>
         {{/link-to}}
+        <span {{action "logOut" on="click"}}>LogOut</span>
     {{else}}
         {{#link-to "create-account"}}<img src="/assets/images/logo.png" class="logo">{{/link-to}}
     {{/if}}

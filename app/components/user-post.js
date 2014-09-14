@@ -4,12 +4,6 @@ export default Ember.Component.extend({
     actions: {
         delete: function() {
             var post = this.get('model');
-            var that = this.$().clone();
-            this.$().prev().before(that);
-            that.hide('slow', function() {
-                that.remove();
-            });
-            
             post.deleteRecord();
             post.save();
             
@@ -22,6 +16,10 @@ export default Ember.Component.extend({
     }.on('didInsertElement'),
 
     deletePost: function() {
-        console.log('this function is called even when didInsertElement event is fired.');
+        var that = this.$().clone();
+        this.$().prev().before(that);
+        that.hide('slow', function() {
+            that.remove();
+        });
     }.on('willDestroyElement')
 });
