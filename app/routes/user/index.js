@@ -9,7 +9,6 @@ export default Ember.Route.extend({
 */
         var curUserId = this.modelFor('user').get('id');
  
-
 /**
 * Here we will find all posts written by a certain author. 
 */

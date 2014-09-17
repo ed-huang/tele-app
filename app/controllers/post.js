@@ -3,10 +3,10 @@ import Ember from 'ember';
 // No import for moment, it's a global called `moment`
 
 export default Ember.ObjectController.extend({
-
+    
     isCurrentUser: function() {
         return this.get('author.id') === this.get('session.user.id');
-    }.property(),
+    }.property('author.id'),
 
     time: function() {
         var time = moment(this.get('timestamp')).fromNow();
