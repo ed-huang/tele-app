@@ -5,9 +5,11 @@ import Ember from 'ember';
 export default Ember.ObjectController.extend({
     
     needs: ['application'],
+
     isUserRoute: function() {
         return this.get('controllers.application.currentRouteName') === 'user.index';
     }.property('controllers.application.currentRouteName'),
+    
     isCurrentUser: function() {
         return this.get('author.id') === this.get('session.user.id');
     }.property('author.id'),

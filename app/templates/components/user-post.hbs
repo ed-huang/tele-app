@@ -1,6 +1,6 @@
 <li class="stream-item border-bottom">
     <div class="tele-post">
-        <div class="content">
+        <div class="content clearfix">
             <div class="stream-item-header">
                 <img class="avatar" src="https://pbs.twimg.com/profile_images/3745958419/9999d627e55bde3c66ebf1682c5ce47a_bigger.png">
                 {{#if isUserRoute}}
@@ -8,10 +8,15 @@
                 {{else}}
                     {{#link-to "user" user}}<strong class="fullname">{{name}}</strong>{{/link-to}}
                 {{/if}}
-                
+                {{#if follow}}
+                    <input type="button" value="Follow" class="tele-btn follow">
+                {{/if}}
             </div>
-            <p class="tweet-text">{{text}}</p>
-            <p><span class="time">{{time}}</span>{{#if isCurrentUser}} - <label class="tele-link delete" {{action "delete" on="click"}}>Delete</label>{{/if}}</p>
+            {{#if text}}
+                <p class="tweet-text">{{text}}</p>
+                <p><span class="time">{{time}}</span>{{#if isCurrentUser}} - <label class="tele-link delete" {{action "delete" on="click"}}>Delete</label>{{/if}}</p>
+            {{/if}}
+            
         </div>
     </div>
 </li>
