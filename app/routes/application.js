@@ -1,5 +1,5 @@
 import Ember from 'ember';
-/* global $, app */
+/* global $ */
 
 export default Ember.Route.extend({
 	// model: function() {
@@ -19,7 +19,7 @@ export default Ember.Route.extend({
             //on success transition to the homepage
                 that.store.unloadAll('post');
                 that.store.unloadAll('user');
-                app.reset();
+                that.session.set('user', null);
                 that.transitionTo('create-account');
             });
         }

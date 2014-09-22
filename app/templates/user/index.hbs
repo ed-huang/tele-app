@@ -1,7 +1,7 @@
 <ol class="stream-items">
   {{#each itemController="post"}}
-    {{user-post text=text name=author.name user=author.id time=time isCurrentUser=isCurrentUser model=model}}
+    {{user-post text=text name=author.name user=author.id time=time isCurrentUser=isCurrentUser isUserRoute=isUserRoute model=model}}
   {{else}}
-    <li class="empty-stream text-center"><h3>You have no posts... {{#link-to "dashboard"}}Want to add one?{{/link-to}}</h3></li>
+    <li class="empty-stream text-center"><h3>No more posts... {{#if session.isAuthenticated}}{{#link-to "dashboard"}}Want to add one?{{/link-to}}{{/if}}</h3></li>
   {{/each}}
 </ol>

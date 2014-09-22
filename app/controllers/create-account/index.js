@@ -19,8 +19,7 @@ export default Ember.Controller.extend({
                 var user = store.createRecord('user', {
                     id: username,
                     name: name,
-                    password: password,
-                    operation: 'signUp'
+                    password: password
                 });
 
                 this.set('session.user', user);

@@ -9,12 +9,11 @@ export default Ember.Route.extend({
 */
         var curUserId = this.modelFor('user').get('id');
  
+
 /**
-* Here we will find all posts written by a certain author. 
+* Here we will find all posts writtent by certain author. 
 */
 
-        return this.store.filter('post', function(post) {
-            return post.get('author').get('id') === curUserId;
-        });
+        return this.store.find('post', { author: curUserId });
     }
 });
