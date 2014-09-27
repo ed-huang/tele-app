@@ -2,6 +2,6 @@
   {{#each itemController="post"}}
     {{user-post text=text name=author.name user=author.id time=time isCurrentUser=isCurrentUser isUserRoute=isUserRoute model=model}}
   {{else}}
-    <li class="empty-stream text-center"><h3>{{author.name}} has no posts... {{#if isCurrentUser}}{{#link-to "dashboard"}}Want to add one?{{/link-to}}{{/if}}</h3></li>
+    <li class="empty-stream text-center"><h3>{{currentUser}} has no posts... {{#if isCurrentUser}}{{#link-to "dashboard"}}Want to add one?{{/link-to}}{{/if}}</h3></li>
   {{/each}}
 </ol>
