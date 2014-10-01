@@ -2,7 +2,7 @@ import Ember from 'ember';
 /* global $ */
 
 export default Ember.ObjectController.extend({
-
+    
     followUnfollow: function() {
         return this.get('isFollowed') ? 'Unfollow' : 'Follow';
     }.property('isFollowed'),
@@ -13,11 +13,12 @@ export default Ember.ObjectController.extend({
 
     actions: {
         follow: function() {
+            Ember.Logger.log('Controller requesting route to refresh...');
 
             if (!this.get('isFollowed')) {
                 console.log('follow!');
                 this.set('isFollowed', true);
-
+                
                 
 
                 $.ajax({
