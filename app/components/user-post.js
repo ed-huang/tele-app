@@ -10,6 +10,8 @@ export default Ember.Component.extend({
         }
     },
     
+    follow: false,
+    
     insertPost: function() {
         this.$().hide().show('slow');
         console.log('didInsertElement called');

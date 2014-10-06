@@ -13,7 +13,7 @@ export default Ember.Route.extend({
 /**
 * Here we will find all posts writtent by certain author. 
 */
-
-        return this.store.find('post', { author: curUserId });
+        
+        return this.store.find('post', { operation: 'index', author: curUserId });
     }
 });

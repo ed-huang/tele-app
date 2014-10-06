@@ -11,6 +11,8 @@ export default Ember.Route.extend({
     },
 
     model: function() {
-        return this.store.find('post');
+        //return posts that current logged in user is following
+        
+        return this.store.find('post', { operation: 'dashboard' });
     }
 });
