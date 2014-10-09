@@ -15,16 +15,19 @@ export default Ember.Controller.extend({
 */
 
             if (username && name && password) {
-                
+                var that = this;
                 var user = store.createRecord('user', {
                     id: username,
                     name: name,
                     password: password
                 });
 
-                this.set('session.user', user);
-                user.save(); //POST REQUEST TO SERVER
-                this.transitionToRoute('dashboard');
+                
+                user.save().then(function() {
+                    that.set('session.user', user);
+                    that.transitionToRoute('dashboard');    
+                }); //POST REQUEST TO SERVER
+                
 
             } else {
                 console.log('username already in database');

@@ -13,21 +13,24 @@ export default Ember.ArrayController.extend({
 
     actions: {
         postTweet: function() {
-            var id = 1;
+            
             var time = new Date();
+            var that = this;
+            var store = this.store;
+
             if (this.get('post') !== '') {
-                var post = this.store.createRecord('post', {
+                var post = store.createRecord('post', {
                     author: this.get('session.user'), 
                     text: this.get('post'),
                     timestamp: time
                 });
 
-                post.save();
-                this.set('post', '');
-                
-                var updatedPosts = this.store.all('post');
-                this.set('model', updatedPosts);
-                
+                post.save().then(function() {
+                    that.set('post', '');
+
+                    var updatedPosts = store.all('post');
+                    that.set('model', updatedPosts);    
+                });   
             }
         }
     }
