@@ -15,7 +15,7 @@ export default Ember.Route.extend({
             // this.store.unloadAll('user');
             // this.store.unloadAll('post');
             // App.reset();
-            $.get('/api/logout', function() {
+            $.get('/api/users/logout', function() {
             //on success transition to the homepage
                 that.store.unloadAll('post');
                 that.store.unloadAll('user');
