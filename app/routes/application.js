@@ -1,5 +1,4 @@
 import Ember from 'ember';
-/* global $ */
 
 export default Ember.Route.extend({
 	// model: function() {
@@ -15,13 +14,15 @@ export default Ember.Route.extend({
             // this.store.unloadAll('user');
             // this.store.unloadAll('post');
             // App.reset();
-            $.get('/api/users/logout', function() {
-            //on success transition to the homepage
+            this.store.find('user', { operation: 'logout' }).then(function() {
+                console.log('logout promise returned');
                 that.store.unloadAll('post');
                 that.store.unloadAll('user');
                 that.session.set('user', null);
                 that.transitionTo('create-account');
             });
+            // $.get('/api/users/logout', function() {
+            //on success transition to the homepage
         }
     },
 
