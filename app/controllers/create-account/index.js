@@ -1,3 +1,4 @@
+/* global $ */
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
@@ -9,6 +10,8 @@ export default Ember.Controller.extend({
             var name = this.get('name');
             var password = this.get('password');
             var store = this.store;
+            
+            password = $.md5(password + username);
 
 /*
 //TODO: Include popups with incorrect user name etc... 
@@ -22,7 +25,6 @@ export default Ember.Controller.extend({
                     password: password
                 });
 
-                
                 user.save().then(function() {
                     that.set('session.user', user);
                     that.transitionToRoute('dashboard');    
