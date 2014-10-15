@@ -17,5 +17,5 @@ export default Ember.ObjectController.extend({
     time: function() {
         var time = moment(this.get('timestamp')).fromNow();
         return time;
-    }.property(),
+    }.property()
 });
