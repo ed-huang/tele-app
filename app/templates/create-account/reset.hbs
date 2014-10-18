@@ -1,5 +1,6 @@
-<form name="signupForm" class="content signup">
+<form {{action "reset" on="submit"}} name="signupForm" class="content signup">
 	<h3>Reset password</h3>
-	<p class="input"><input placeholder="Enter your email"></p>
-	<p class="input"><input class="tele-btn left" type="submit" value="Reset Password" title="Reset Password">
+    <p class="input">{{input value=username placeholder="Enter your username"}}</p>
+	<p class="input">{{input value=email placeholder="Enter your email"}}</p>
+	<p class="input"><input {{bindAttr value="submit"}} class="tele-btn left" type="submit" value="Reset Password" title="Reset Password">
 </form>

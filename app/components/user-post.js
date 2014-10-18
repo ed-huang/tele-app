@@ -6,7 +6,7 @@ export default Ember.Component.extend({
             var post = this.get('model');
             post.deleteRecord();
             post.save();
-            
+            // this.sendAction('deleteRecord', this.get('model'));
         }
     },
     

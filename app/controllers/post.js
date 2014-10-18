@@ -17,5 +17,15 @@ export default Ember.ObjectController.extend({
     time: function() {
         var time = moment(this.get('timestamp')).fromNow();
         return time;
-    }.property()
+    }.property(),
+
+    actions: {
+        delete: function() {
+            console.log('postcontroller delete');
+            this.store.find('post', this.get('model').id).then(function (post) {
+                post.deleteRecord();
+                post.save();
+            });
+        }
+    }
 });
