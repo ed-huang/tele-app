@@ -2,7 +2,7 @@
     <div class="tele-post">
         <div class="content clearfix">
             <div class="stream-item-header">
-                <img class="avatar" src="https://pbs.twimg.com/profile_images/3745958419/9999d627e55bde3c66ebf1682c5ce47a_bigger.png">
+                <img class="avatar" {{bind-attr src=picture}}>
                 {{#if isUserRoute}}
                     <strong class="fullname">{{name}}</strong>
                 {{else}}
