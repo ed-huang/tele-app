@@ -4,7 +4,7 @@
     	{{#link-to "dashboard"}}<img src="/assets/images/logo.png" class="logo">{{/link-to}}
     	{{#link-to "user" session.user.id}}
         <div class="user-links">
-            <img src="/assets/images/profile-pic.png" height=20 class="user-profile">
+            <img {{bind-attr src=session.user.picture}} height=20 class="user-profile">
             <span class="name">{{session.user.name}}</span>
         </div>
         {{/link-to}}
