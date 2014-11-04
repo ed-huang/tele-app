@@ -14,10 +14,11 @@ export default Ember.ObjectController.extend({
     actions: {
         follow: function() {
             Ember.Logger.log('Controller requesting route to refresh...');
-
+            var self = this;
             if (!this.get('isFollowed')) {
                 console.log('follow!');
-                this.set('isFollowed', true);
+
+                
 
                 $.ajax({
                     type: "POST",
@@ -26,9 +27,8 @@ export default Ember.ObjectController.extend({
                         id: this.get('id')
                     }, //json object -> req.body.id
                     success: function (data) {
-                        // that.set('isFollowed', true);
+                        self.set('isFollowed', true);
                         console.log('data: ', data);
-                        
                     },
                     dataType: 'json'
                 });    
@@ -41,12 +41,11 @@ export default Ember.ObjectController.extend({
                         id: this.get('id')
                     }, //json object -> req.body.id
                     success: function (data) {
-                        // that.set('isFollowed', false);
+                        self.set('isFollowed', false);
                         console.log('data: ', data);
                     },
                     dataType: 'json'
                 });
-                this.set('isFollowed', false);
             }
             
             

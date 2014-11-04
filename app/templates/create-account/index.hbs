@@ -4,7 +4,13 @@
 	<p class="input">{{input type="text" value=username placeholder="Enter your username ..."}}</p>
 	<p class="input">{{input type="password" value=password placeholder="Enter your password ..."}}</p>
 	<p class="input">
-        <input {{bindAttr value="submit"}}class="tele-btn left" type="submit" value="Sign Up" title="Log in">
+        <input {{bind-attr value="submit"}}class="tele-btn left" type="submit" value="Sign Up" title="Log in">
         <span class="tele-link right">{{#link-to "create-account.login"}}Login{{/link-to}}</span>
     </p>
 </form>
+
+{{!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div> --}}

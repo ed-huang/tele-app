@@ -31,6 +31,16 @@ export default Ember.Controller.extend({
             } else {
                 console.log('no username in database');
             }
+        },
+        facebookLogin: function() {
+            var store = this.store;
+            var self = this;
+            console.log('facebook');
+            store.find('user', { operation: 'facebookLogin' }).then(function(users) {
+                self.set('session.user', users.get('firstObject'));
+                self.transitionToRoute('dashboard');
+            });
         }
+
     }
 });

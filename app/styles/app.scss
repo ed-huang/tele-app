@@ -1,3 +1,8 @@
+@import 'vendor/bootstrap-sass-official/assets/stylesheets/bootstrap';
+.edsStyle{
+    font-size: 100em;
+}
+
 html, body, .ember-view, article.account {
   /*margin: 20px;*/
   height: 100%;
