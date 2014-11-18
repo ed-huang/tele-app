@@ -16,7 +16,6 @@ export default Ember.ObjectController.extend({
             Ember.Logger.log('Controller requesting route to refresh...');
             var self = this;
             if (!this.get('isFollowed')) {
-                console.log('follow!');
                 $.ajax({
                     type: "POST",
                     url: '/api/users/follow',
@@ -26,11 +25,11 @@ export default Ember.ObjectController.extend({
                     success: function (data) {
                         self.set('isFollowed', true);
                         console.log('data: ', data);
+                        console.log('follow!');
                     },
                     dataType: 'json'
                 });    
             } else {
-                console.log('unfollow!');
                 $.ajax({
                     type: "POST",
                     url: '/api/users/unfollow',
@@ -40,6 +39,7 @@ export default Ember.ObjectController.extend({
                     success: function (data) {
                         self.set('isFollowed', false);
                         console.log('data: ', data);
+                        console.log('unfollow!');
                     },
                     dataType: 'json'
                 });
