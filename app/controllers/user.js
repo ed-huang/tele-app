@@ -17,9 +17,6 @@ export default Ember.ObjectController.extend({
             var self = this;
             if (!this.get('isFollowed')) {
                 console.log('follow!');
-
-                
-
                 $.ajax({
                     type: "POST",
                     url: '/api/users/follow',

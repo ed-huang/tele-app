@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     actions: {
         delete: function() {
+            console.log('component delete');
             var post = this.get('model');
             post.deleteRecord();
             post.save();
@@ -18,6 +19,7 @@ export default Ember.Component.extend({
     }.on('didInsertElement'),
 
     deletePost: function() {
+        console.log('jquery deletePost inside of component');
         var that = this.$().clone();
         this.$().prev().before(that);
         that.hide('slow', function() {

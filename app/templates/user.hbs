@@ -4,7 +4,13 @@
         <img {{bind-attr src=picture}}>
         <h4 class="user-name">{{name}}</h3>
         <p class="twitter-handle">@{{id}}</p>
-        {{#if session.isAuthenticated}}{{#if isCurrentUser}}{{else}}<button {{action 'follow'}} type="button" class="tele-btn">{{followUnfollow}}</button>{{/if}}{{/if}}
+        {{#if session.isAuthenticated}}
+            {{#if isCurrentUser}}
+            <!-- Current User followBtn will not be displayed -->
+            {{else}}
+                {{follow-button followUnfollow=followUnfollow action="follow"}}
+            {{/if}}
+        {{/if}}
     </div>
     <div class="stream-nav text-center border-bottom">
         <ul class="list-inline">
