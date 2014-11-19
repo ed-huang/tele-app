@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    tagName: 'button',
-    classNames: ['tele-btn'],
-    click: function() {
-        this.sendAction();
-    },
-    
+    classNames: ['tele-btn', 'btn', 'btn-default'],
+    actions: {
+        followUser: function() {
+            this.sendAction('follow-user');
+        },
+    }
 });
 

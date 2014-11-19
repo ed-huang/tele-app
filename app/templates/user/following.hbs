@@ -3,7 +3,7 @@
     {{#user-post name=name user=id picture=picture}}
         {{#if isCurrentUser}}
         {{else}}
-            {{follow-button followUnfollow=followUnfollow action="follow"}}
+            {{follow-button followUnfollow=followUnfollow follow-user="follow"}}
         {{/if}}
     {{/user-post}}
   {{else}}
