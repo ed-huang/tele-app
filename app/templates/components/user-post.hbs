@@ -8,14 +8,8 @@
                 {{else}}
                     {{#link-to "user" user}}<strong class="fullname">{{name}}</strong>{{/link-to}}
                 {{/if}}
-                {{#if isFollowingRoute}}
-                    {{follow-button followUnfollow=followUnfollow action="follow"}}
-                {{/if}}
+                {{yield}}
             </div>
-            {{#if text}}
-                <p class="tweet-text">{{text}}</p>
-                <p><span class="time">{{time}}</span>{{#if isCurrentUser}} - <label class="tele-link delete" {{action "delete" on="click"}}>Delete</label>{{/if}}</p>
-            {{/if}}
             
         </div>
     </div>

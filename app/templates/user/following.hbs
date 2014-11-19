@@ -1,6 +1,11 @@
 <ol class="stream-items">
 {{#each itemController="user"}}
-    {{user-post name=name user=id picture=picture isCurrentUser=isCurrentUser isUserRoute=isUserRoute model=model followUnfollow=followUnfollow isFollowingRoute=isFollowingRoute action="follow"}}
+    {{#user-post name=name user=id picture=picture}}
+        {{#if isCurrentUser}}
+        {{else}}
+            {{follow-button followUnfollow=followUnfollow action="follow"}}
+        {{/if}}
+    {{/user-post}}
   {{else}}
     <li class="empty-stream text-center"><h3>Not Following Anyone...</h3></li>
   {{/each}}

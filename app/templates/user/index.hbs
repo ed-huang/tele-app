@@ -1,6 +1,9 @@
 <ol class="stream-items">
   {{#each itemController="post"}}
-    {{user-post text=text name=author.name user=author.id picture=author.picture time=time isCurrentUser=isCurrentUser isUserRoute=isUserRoute model=model action="delete"}}
+    {{#user-post name=author.name user=author.id picture=author.picture time=time isUserRoute=isUserRoute}}
+        <p class="tweet-text">{{text}}</p>
+        <span><span class="time">{{time}}</span>{{#if isCurrentUser}} - <label class="tele-link delete" {{action "delete" on="click"}}>Delete</label>{{/if}}</span>
+    {{/user-post}}
   {{else}}
     <li class="empty-stream text-center"><h3>{{currentUser}} has no posts... {{#if isCurrentUser}}{{#link-to "dashboard"}}Want to add one?{{/link-to}}{{/if}}</h3></li>
   {{/each}}

@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.ArrayController.extend({
     
     needs: ['application', 'user'],
-    
+
     isFollowed: Ember.computed.alias('controllers.user.isFollowed'),
 
     modelObserver: function() {
@@ -21,12 +21,7 @@ export default Ember.ArrayController.extend({
             }
             
             this.set('model', myArray);
-        
             // this.send('invalidateModel'); 
-
-
             // console.log('observer is called: ', change);
-            
-        
     }.observes('controllers.user.isFollowed')
 });

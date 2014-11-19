@@ -22,7 +22,10 @@
         <div class="stream-content">
             <ol class="stream-items"> 
             {{#each controller itemController="post"}}
-                {{user-post name=author.name text=text time=time user=author.id picture=author.picture isCurrentUser=isCurrentUser model=model action="delete"}}
+                {{#user-post name=author.name user=author.id picture=author.picture}}
+                    <p class="tweet-text">{{text}}</p>
+                    <span><span class="time">{{time}}</span>{{#if isCurrentUser}} - <label class="tele-link delete" {{action "delete" on="click"}}>Delete</label>{{/if}}</span>
+                {{/user-post}}
             {{else}}
                 <li class="empty-stream text-center"><h3>There are no posts. :(</h3></li>
             {{/each}}
