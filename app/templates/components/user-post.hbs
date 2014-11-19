@@ -8,9 +8,8 @@
                 {{else}}
                     {{#link-to "user" user}}<strong class="fullname">{{name}}</strong>{{/link-to}}
                 {{/if}}
-                {{#if isFollowerRoute}}
+                {{#if isFollowingRoute}}
                     {{follow-button followUnfollow=followUnfollow action="follow"}}
-                    <input type="button" value="Follow" class="tele-btn follow">
                 {{/if}}
             </div>
             {{#if text}}

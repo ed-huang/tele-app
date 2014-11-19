@@ -2,10 +2,16 @@ import Ember from 'ember';
 /* global $ */
 
 export default Ember.ObjectController.extend({
+
+    needs: ['application'],
     
     followUnfollow: function() {
         return this.get('isFollowed') ? 'Unfollow' : 'Follow';
     }.property('isFollowed'),
+
+    isFollowingRoute: function() {
+        return this.get('controllers.application.currentRouteName') === 'user.following';
+    }.property('controllers.application.currentRouteName'),
 
     isCurrentUser: function() {
         return this.get('id') === this.get('session.user.id');

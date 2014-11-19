@@ -3,10 +3,6 @@ import Ember from 'ember';
 export default Ember.ArrayController.extend({
     
     needs: ['application', 'user'],
-
-    isFollowerRoute: function() {
-        return this.get('controllers.application.currentRouteName') === 'user.followers';
-    }.property('controllers.application.currentRouteName'),
     
     isFollowed: Ember.computed.alias('controllers.user.isFollowed'),
 
