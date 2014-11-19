@@ -6,7 +6,7 @@ export default Ember.ObjectController.extend({
     
     needs: ['application'],
 
-    isUserRoute: function() {
+    isUserIndexRoute: function() {
         return this.get('controllers.application.currentRouteName') === 'user.index';
     }.property('controllers.application.currentRouteName'),
 

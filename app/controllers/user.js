@@ -41,7 +41,7 @@ export default Ember.ObjectController.extend({
                     url: '/api/users/unfollow',
                     data: {
                         id: this.get('id')
-                    }, //json object -> req.body.id
+                    },
                     success: function (data) {
                         self.set('isFollowed', false);
                         console.log('data: ', data);
@@ -50,12 +50,6 @@ export default Ember.ObjectController.extend({
                     dataType: 'json'
                 });
             }
-            
-            
-            // var updateEvent = { id: this.get('id'), { $push: { followers: this.get('session.user.id') }}}
-            // this.store.update('user', updateEvent);
-            //api follow / unfollow ajax call similar to logout. 
-            
         }
     }
 });

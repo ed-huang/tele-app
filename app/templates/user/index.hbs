@@ -1,6 +1,6 @@
 <ol class="stream-items">
   {{#each itemController="post"}}
-    {{#user-post name=author.name user=author.id picture=author.picture time=time isUserRoute=isUserRoute}}
+    {{#user-post name=author.name user=author.id picture=author.picture time=time isUserIndexRoute=isUserIndexRoute}}
         <p class="tweet-text">{{text}}</p>
         <span><span class="time">{{time}}</span>{{#if isCurrentUser}} - <label class="tele-link delete" {{action "delete" on="click"}}>Delete</label>{{/if}}</span>
     {{/user-post}}

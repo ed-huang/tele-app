@@ -21,7 +21,5 @@ export default Ember.ArrayController.extend({
             }
             
             this.set('model', myArray);
-            // this.send('invalidateModel'); 
-            // console.log('observer is called: ', change);
     }.observes('controllers.user.isFollowed')
 });
