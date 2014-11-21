@@ -1,25 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	// model: function() {
-	// 	// return this.store.find('user');
-	// }
 
     // You should of course also check if any network error occurs below.
 
     actions: {
         logOut: function() {
             console.log('caling logOut');
-            var that = this;
-            // this.store.unloadAll('user');
-            // this.store.unloadAll('post');
-            // App.reset();
+            var self = this;
+
             this.store.find('user', { operation: 'logout' }).then(function() {
                 console.log('logout promise returned');
-                that.store.unloadAll('post');
-                that.store.unloadAll('user');
-                that.session.set('user', null);
-                that.transitionTo('create-account');
+                self.store.unloadAll('post');
+                self.store.unloadAll('user');
+                self.session.set('user', null);
+                self.transitionTo('create-account');
             });
             // $.get('/api/users/logout', function() {
             //on success transition to the homepage

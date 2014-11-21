@@ -19,7 +19,7 @@ export default Ember.ObjectController.extend({
 
     actions: {
         follow: function() {
-            Ember.Logger.log('Controller requesting route to refresh...');
+            Ember.Logger.log('User Controller requesting route to refresh...');
             var self = this;
             if (!this.get('isFollowed')) {
                 $.ajax({

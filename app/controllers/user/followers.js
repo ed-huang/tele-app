@@ -7,7 +7,7 @@ export default Ember.ArrayController.extend({
     isFollowed: Ember.computed.alias('controllers.user.isFollowed'),
 
     modelObserver: function() {
-        Ember.Logger.log('Controller requesting route to refresh...');
+        console.log('Followers Controller requesting route to refresh...');
         // var change = this.get('isFollowed');
             var myArray = [];
             for (var i = 0; i < this.get('length'); i++) {
@@ -19,7 +19,7 @@ export default Ember.ArrayController.extend({
             } else {
                 myArray.removeObject(this.get('session.user'));
             }
-            
+
             this.set('model', myArray);
     }.observes('controllers.user.isFollowed')
 });
