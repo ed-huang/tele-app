@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
     maxLength: 140,
-    needs: ['user'],
     post: '',
     sortProperties: ['timestamp'],
     sortAscending: false,
