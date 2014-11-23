@@ -14,5 +14,11 @@ export default Ember.Route.extend({
         //return posts that current logged in user is following
         
         return this.store.find('post', { operation: 'dashboard' });
+    },
+    actions: {
+        invalidateModel: function() {
+            Ember.Logger.log('Route is now refreshing...');
+            this.refresh();
+        }
     }
 });

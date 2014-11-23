@@ -1,6 +1,6 @@
 <header class="navbar text-center">
     {{#if session.isAuthenticated}}
-    	{{#link-to "dashboard"}}<img src="/assets/images/home-btn.png" class="home-btn">{{/link-to}}
+    	{{#link-to "dashboard"}}<img src="/assets/images/home-btn.png" class="home-btn" {{action "invalidateModel"}}>{{/link-to}}
     	{{#link-to "dashboard"}}<img src="/assets/images/logo.png" class="logo">{{/link-to}}
     	{{#link-to "user" session.user.id}}
         <div class="user-links">
