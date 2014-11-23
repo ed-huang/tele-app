@@ -13,10 +13,6 @@ export default Ember.Controller.extend({
             
             password = $.md5(password + username);
 
-/*
-//TODO: Include popups with incorrect user name etc... 
-*/
-
             if (username && name && password) {
                 var that = this;
                 var user = store.createRecord('user', {

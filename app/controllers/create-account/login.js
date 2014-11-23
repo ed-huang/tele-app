@@ -11,13 +11,8 @@ export default Ember.Controller.extend({
             var store = this.store;
             var self = this;
             
-/*
-//TODO: Include popups with incorrect user name etc... 
-*/
-            
-//Check to see if form name and password within the DB
             if (username && password) {
-//FIND generates a GET
+
                 console.log('logging in: ');
 
                 password = $.md5(password + username);

@@ -17,16 +17,18 @@ export default Ember.ObjectController.extend({
         return this.get('id') === this.get('session.user.id');
     }.property('id'),
 
+
     actions: {
         follow: function() {
             var self = this;
+
             if (!this.get('isFollowed')) {
                 $.ajax({
                     type: "POST",
                     url: '/api/users/follow',
                     data: {
                         id: this.get('id')
-                    }, //json object -> req.body.id
+                    },
                     success: function (data) {
                         self.set('isFollowed', true);
                         console.log('data: ', data);

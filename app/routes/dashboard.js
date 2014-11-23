@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    beforeModel: function() {
 
+    beforeModel: function() {
         var loggedIn = this.get('session.isAuthenticated');
 
         if (!loggedIn) {
@@ -11,14 +11,13 @@ export default Ember.Route.extend({
     },
 
     model: function() {
-        //return posts that current logged in user is following
-        
-        return this.store.find('post', { operation: 'dashboard' });
-    },
-    actions: {
-        invalidateModel: function() {
-            Ember.Logger.log('Route is now refreshing...');
-            this.refresh();
-        }
+        var self = this;
+        return this.store.filter('post', { operation: 'dashboard' }, function (post) {
+            if (post.get('author').id === self.get('session.user.id')) {
+                return true;
+            } else {
+                return post.get('author').get('isFollowed');    
+            }
+        });
     }
 });
