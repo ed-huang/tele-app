@@ -2,7 +2,9 @@
   {{#each itemController="post"}}
     {{#user-post name=author.name user=author.id picture=author.picture time=time isUserIndexRoute=isUserIndexRoute}}
         <p class="tweet-text">{{text}}</p>
-        <span><span class="time">{{time}}</span>{{#if isCurrentUser}} - <label class="tele-link delete" {{action "delete"}}>Delete</label>{{/if}}</span>
+        <div>
+            <span class="time">{{time}}</span>{{!--  &#149; <label class="tele-link delete" {{action "repost"}}>Repost</label> --}}{{#if isCurrentUser}} &#149; <label class="tele-link delete" {{action "delete"}}>Delete</label>{{/if}}
+        </div>
     {{/user-post}}
   {{else}}
     <li class="empty-stream text-center"><h3>{{currentUser}} has no posts... {{#if isCurrentUser}}{{#link-to "dashboard"}}Want to add one?{{/link-to}}{{/if}}</h3></li>

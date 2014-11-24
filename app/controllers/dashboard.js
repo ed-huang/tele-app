@@ -27,13 +27,13 @@ export default Ember.ArrayController.extend({
                     self.set('post', '');
                 });   
             }
-        }
+        }      
     },
 
     wordCount: function() {
         return  this.get('maxLength') - this.get('post').length;
     }.property('post', 'maxLength')
-    // ,
+
 
     
 });

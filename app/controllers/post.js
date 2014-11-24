@@ -6,6 +6,8 @@ export default Ember.ObjectController.extend({
     
     needs: ['application'],
 
+    repostConfirm: false,
+
     isUserIndexRoute: function() {
         return this.get('controllers.application.currentRouteName') === 'user.index';
     }.property('controllers.application.currentRouteName'),
@@ -26,6 +28,9 @@ export default Ember.ObjectController.extend({
                 post.deleteRecord();
                 post.save();
             });
+        },
+        repost: function() {
+            this.set('repostConfirm', true);
         }
     }
 });

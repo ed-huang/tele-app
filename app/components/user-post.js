@@ -2,8 +2,17 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
+    actions: {
+        repost: function() {
+            console.log('repost called');
+            this.set('repostConfirm', true);
+        }
+    },
+
+    repostConfirm: false,
+
     insertPost: function() {
-        this.$().hide().show('slow');
+        this.$().hide().slideDown('slow');
         console.log('didInsertElement called');
     }.on('didInsertElement'),
 
@@ -11,7 +20,7 @@ export default Ember.Component.extend({
         console.log('jquery deletePost inside of component');
         var that = this.$().clone();
         this.$().prev().before(that);
-        that.hide('slow', function() {
+        that.slideUp('slow', function() {
             that.remove();
         });
     }.on('willDestroyElement')

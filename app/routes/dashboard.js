@@ -12,6 +12,7 @@ export default Ember.Route.extend({
 
     model: function() {
         var self = this;
+        
         return this.store.filter('post', { operation: 'dashboard' }, function (post) {
             if (post.get('author').id === self.get('session.user.id')) {
                 return true;
