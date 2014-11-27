@@ -22,12 +22,15 @@
         <div class="stream-content">
             <ol class="stream-items"> 
             {{#each controller itemController="post"}}
-                {{#user-post name=author.name user=author.id picture=author.picture repostConfirm=repostConfirm}}
+                {{#user-post name=author.name user=author.id picture=author.picture}}
                     <p class="tweet-text">{{text}}</p>
                     <div>
-                        <span class="time">{{time}}</span>{{!--  &#149; <span class="tele-link" {{action "repost"}}>Repost</span> --}}{{#if isCurrentUser}} &#149; <span class="tele-link" {{action "delete"}}>Delete</span>{{/if}}
+                        <span class="time">{{time}}</span> &#149; <span class="tele-link" {{action "repost"}}>{{repostLink}}</span> &#149; <span class="tele-link" {{action "delete"}}>Delete</span>
                     </div>
                 {{/user-post}}
+                {{#if repostConfirm}}
+                        {{repost-confirmation yesRepost="yesRepost" noRepost="unrepost"}}
+                    {{/if}}
             {{else}}
                 <li class="empty-stream text-center"><h3>There are no posts. :(</h3></li>
             {{/each}}

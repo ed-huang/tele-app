@@ -8,6 +8,10 @@ export default Ember.ObjectController.extend({
 
     repostConfirm: false,
 
+    repostLink: function() {
+        return this.get('repostConfirm') ? 'Unrepost' : 'Repost';
+    }.property('repostConfirm'),
+
     isUserIndexRoute: function() {
         return this.get('controllers.application.currentRouteName') === 'user.index';
     }.property('controllers.application.currentRouteName'),
@@ -29,8 +33,17 @@ export default Ember.ObjectController.extend({
                 post.save();
             });
         },
+
         repost: function() {
-            this.set('repostConfirm', true);
+            if (this.get('repostConfirm')) {
+                this.set('repostConfirm', false);   
+            } else {
+                this.set('repostConfirm', true);    
+            } 
+        },
+
+        unrepost: function() {
+            this.set('repostConfirm', false);
         }
     }
 });
