@@ -44,6 +44,10 @@ export default Ember.ObjectController.extend({
 
         unrepost: function() {
             this.set('repostConfirm', false);
+        },
+
+        yesRepost: function() {
+            console.log('yesRepost from the post controller.');
         }
     }
 });

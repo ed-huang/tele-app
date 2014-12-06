@@ -25,7 +25,7 @@
                 {{#user-post name=author.name user=author.id picture=author.picture}}
                     <p class="tweet-text">{{text}}</p>
                     <div>
-                        <span class="time">{{time}}</span> &#149; <span class="tele-link" {{action "repost"}}>{{repostLink}}</span> &#149; <span class="tele-link" {{action "delete"}}>Delete</span>
+                        <span class="time">{{time}}</span> &#149; <span class="tele-link" {{action "repost"}}>{{repostLink}}</span>{{#if isCurrentUser }} &#149; <span class="tele-link" {{action "delete"}}>Delete</span>{{/if}}
                     </div>
                 {{/user-post}}
                 {{#if repostConfirm}}

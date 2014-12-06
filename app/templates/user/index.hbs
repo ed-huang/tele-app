@@ -3,7 +3,7 @@
     {{#user-post name=author.name user=author.id picture=author.picture time=time isUserIndexRoute=isUserIndexRoute}}
         <p class="tweet-text">{{text}}</p>
         <div>
-            <span class="time">{{time}}</span> &#149; <label class="tele-link delete" {{action "repost"}}>Repost</label> &#149; <label class="tele-link delete" {{action "delete"}}>Delete</label>
+            <span class="time">{{time}}</span> &#149; <label class="tele-link delete" {{action "repost"}}>Repost</label>{{#if isCurrentUser}} &#149; <label class="tele-link delete" {{action "delete"}}>Delete</label>{{/if}}
         </div>
     {{/user-post}}
   {{else}}
