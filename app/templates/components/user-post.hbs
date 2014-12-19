@@ -1,12 +1,20 @@
 <li class="stream-item border-bottom">
+
     <div class="tele-post">
         <div class="content clearfix">
+            
             <div class="stream-item-header">
-                <img class="avatar" {{bind-attr src=picture}}>
-                {{#if isUserRoute}}
-                    <strong class="fullname">{{name}}</strong>
+                {{#if original_author}}
+                <p class="repost">
+                    <img class="avatar" src="/assets/images/icon-retweet.png">
+                    <span class="small-text">Repost by {{original_author.name}}</span>
+                </p>
+                {{/if}}
+                <img class="avatar" {{bind-attr src=user.picture}}>
+                {{#if isUserIndexRoute}}
+                    <strong class="fullname">{{user.name}}</strong>
                 {{else}}
-                    {{#link-to "user" user}}<strong class="fullname">{{name}}</strong>{{/link-to}}
+                    {{#link-to "user" user.id}}<strong class="fullname">{{user.name}}</strong>{{/link-to}}
                 {{/if}}
                 {{yield}}
             </div>

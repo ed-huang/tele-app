@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <form class="form-horizontal" role="form" {{action "postTweet" on="submit"}}>
                     <div class="form-group">
-                        {{textarea class="dashboard-form-control" placeholder="Enter Post Here..." value=post rows="4" maxlength=maxLength}}
+                        {{textarea class="dashboard-form-control" placeholder="Enter Post Here..." value=text rows="4" maxlength=maxLength}}
                     </div>
                     <div class="form-group">
                         <span class="left">{{wordCount}} Characters Left</span>
@@ -22,15 +22,15 @@
         <div class="stream-content">
             <ol class="stream-items"> 
             {{#each controller itemController="post"}}
-                {{#user-post name=author.name user=author.id picture=author.picture}}
+                {{#user-post user=author isUserIndexRoute=isUserIndexRoute original_author=original_author}}
                     <p class="tweet-text">{{text}}</p>
                     <div>
-                        <span class="time">{{time}}</span> &#149; <span class="tele-link" {{action "repost"}}>{{repostLink}}</span>{{#if isCurrentUser }} &#149; <span class="tele-link" {{action "delete"}}>Delete</span>{{/if}}
+                        <span class="time">{{time}}</span>{{#unless isCurrentUser}} &#149; <span class="tele-link" {{action "repost"}}>Repost</span>{{/unless}}{{#if isCurrentUser }} &#149; <span class="tele-link" {{action "delete"}}>Delete</span>{{/if}}
                     </div>
                 {{/user-post}}
                 {{#if repostConfirm}}
-                        {{repost-confirmation yesRepost="yesRepost" noRepost="unrepost"}}
-                    {{/if}}
+                    {{repost-confirmation yesRepost="yesRepost" noRepost="noRepost"}}
+                {{/if}}
             {{else}}
                 <li class="empty-stream text-center"><h3>There are no posts. :(</h3></li>
             {{/each}}

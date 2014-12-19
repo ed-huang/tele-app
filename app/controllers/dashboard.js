@@ -2,36 +2,50 @@ import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
     maxLength: 140,
-    post: '',
+    text: '',
     sortProperties: ['timestamp'],
     sortAscending: false,
 
     actions: {
-        postTweet: function() {
-            
-            var self = this;
-            var store = this.store;
-            var time = new Date();
+        postTweet: function (repost) {
+            var data = {};
 
-            if (this.get('post') !== '') {
-                
-                var data = {
+            if (repost !== undefined) {
+                data = {
                     author: this.get('session.user'), 
-                    text: this.get('post'),
-                    timestamp: time
+                    original_author: repost.get('author'),
+                    text: repost.get('text'),
+                    timestamp: new Date()
                 };
+                this.send('postNewRecord', data);
 
-                var post = store.createRecord('post', data);
-
-                post.save().then(function() {
-                    self.set('post', '');
-                });   
+            } else {
+                if (this.get('text') !== '') {
+                    data = {
+                        author: this.get('session.user'), 
+                        original_author: '',
+                        text: this.get('text'),
+                        timestamp: new Date()
+                    };
+                    this.send('postNewRecord', data);    
+                }
             }
-        }      
+        }
+    },
+
+    postNewRecord: function (data) {
+        var self = this;
+        var store = this.store;
+
+        var post = store.createRecord('post', data);
+
+        post.save().then(function() {
+            self.set('text', '');
+        });
     },
 
     wordCount: function() {
-        return  this.get('maxLength') - this.get('post').length;
+        return  this.get('maxLength') - this.get('text').length;
     }.property('post', 'maxLength')
 
 

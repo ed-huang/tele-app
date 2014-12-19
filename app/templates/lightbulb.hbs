@@ -1,0 +1,12 @@
+{{!-- <ul id="messages"></ul>
+<form id="chat" {{action "sendMessage" on "submit" }}>
+  {{input id="m" autocomplete="off" value=msg}}<button type="submit">Send</button>
+</form> --}}
+<div class="lightbulb">
+    {{#scrolling-div id="messagesDiv" update-when=this}}
+        {{#each}}
+            <div>{{this}}</div>
+        {{/each}}
+    {{/scrolling-div}}
+    {{input  value=msg id="newMessage" action="sendMessage"}}
+</div>
