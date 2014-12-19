@@ -14,7 +14,8 @@
     "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.2",
     "moment": "~2.8.1",
     "jquery-md5": "*",
-    "bootstrap-sass-official": "~3.3.0"
+    "bootstrap-sass-official": "~3.3.0",
+    "socket.io-client": "~1.2.1"
   },
   "devDependencies": {
     "bootstrap": "~3.2.0"
