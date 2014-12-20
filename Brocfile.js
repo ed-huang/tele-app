@@ -3,14 +3,12 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
-<<<<<<< HEAD
-=======
+
 app.import('vendor/bootstrap/dist/css/bootstrap.css');
-app.import('vendor/facebook/facebookAPI.js');
 app.import('vendor/bootstrap/dist/js/bootstrap.js');
 app.import('vendor/moment/moment.js');
 app.import('vendor/jquery-md5/jquery.md5.js');
->>>>>>> parent of 0981758... new route called lightbuble for chat component
+app.import('vendor/socket.io-client/socket.io.js');
 
 // Use `app.import` to add additional libraries to the generated
 // output files.

@@ -18,8 +18,8 @@ Router.map(function() {
   });
   
   this.route('dashboard');
-  
   this.route('chat');
+  this.route('lightbulb');
 });
 
 export default Router;
