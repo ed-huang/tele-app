@@ -1,6 +1,6 @@
 <ol class="stream-items">
     {{#each itemController="user"}}
-        {{#user-post user=controller}}
+        {{#user-post name=name user=id picture=picture}}
             {{#if session.isAuthenticated}}
                 {{#unless isCurrentUser}}
                     {{follow-button followUnfollow=followUnfollow follow-user="follow"}}

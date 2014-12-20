@@ -26,6 +26,15 @@
     "ember-cli-ic-ajax": "0.1.1",
     "express": "^4.1.1",
     "glob": "^3.2.9",
+<<<<<<< HEAD
     "originate": "0.1.5"
+=======
+    "originate": "0.1.5",
+    "broccoli-sass": "~0.3.2"
+  },
+  "dependencies": {
+    "bcrypt": "^0.8.0",
+    "blueimp-md5": "^1.1.0"
+>>>>>>> parent of 0981758... new route called lightbuble for chat component
   }
 }

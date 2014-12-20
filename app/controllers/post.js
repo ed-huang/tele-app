@@ -4,13 +4,13 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
     
-    needs: ['application', 'dashboard'],
-    dashboard: Ember.computed.alias('controllers.dashboard'),
+    needs: ['application'],
+
     repostConfirm: false,
 
-    isRepost: function() {
-        return this.get('original_author') === null ? false : false;
-    }.property('original_author'),
+    repostLink: function() {
+        return this.get('repostConfirm') ? 'Unrepost' : 'Repost';
+    }.property('repostConfirm'),
 
     isUserIndexRoute: function() {
         return this.get('controllers.application.currentRouteName') === 'user.index';
@@ -42,12 +42,12 @@ export default Ember.ObjectController.extend({
             } 
         },
 
-        yesRepost: function() {
-            this.get('dashboard').send('postTweet', this);
+        unrepost: function() {
+            this.set('repostConfirm', false);
         },
 
-        noRepost: function() {
-            this.set('repostConfirm', false);
+        yesRepost: function() {
+            console.log('yesRepost from the post controller.');
         }
     }
 });
