@@ -19,6 +19,6 @@ Ember.MessagesArray = Ember.ArrayProxy.extend({
 
 export default Ember.Route.extend({
     model: function() {
-        return Ember.MessagesArray.create({ socket: io.connect(document.URL) });
+        return Ember.MessagesArray.create({ socket: io.connect('http://192.168.56.10:3000') });
     }
 });

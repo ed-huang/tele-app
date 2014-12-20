@@ -3,11 +3,6 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
-app.import('vendor/bootstrap/dist/css/bootstrap.css');
-app.import('vendor/bootstrap/dist/js/bootstrap.js');
-app.import('vendor/moment/moment.js');
-app.import('vendor/jquery-md5/jquery.md5.js');
-app.import('vendor/socket.io-client/socket.io.js');
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
