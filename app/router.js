@@ -20,6 +20,7 @@ Router.map(function() {
   this.route('dashboard');
   this.route('chat');
   this.route('lightbulb');
+  this.route('callback');
 });
 
 export default Router;
